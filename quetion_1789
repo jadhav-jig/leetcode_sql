@@ -1,0 +1,9 @@
+#1789. Primary Department for Each Employee
+SELECT employee_id, department_id
+from employee
+WHERE
+primary_flag='Y' or 
+employee_id in (SELECT employee_id FROM employee
+                GROUP BY employee_id
+               HAVING COUNT(employee_id)=1)              
+ORDER BY employee_id;

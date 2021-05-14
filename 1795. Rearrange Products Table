@@ -1,0 +1,15 @@
+/*
+1795. Rearrange Products Table
+
+USE UNPIVOT as the table is a pivot table that has been generated.
+
+https://www.geeksforgeeks.org/pivot-and-unpivot-in-sql/
+
+*/
+
+SELECT * 
+FROM Products
+UNPIVOT ( price 
+         FOR store 
+         IN (store1, store2, store3)
+        ) as unpvt

@@ -1,0 +1,17 @@
+/*
+Use Datename for answering this problem
+
+Use this for reference: https://www.w3schools.com/sql/func_sqlserver_datename.asp
+
+*/
+
+SELECT DATENAME(dw, day)+ ', ' + DATENAME(m, day) + ' ' + DATENAME(day, day) + ', ' + DATENAME(yy, day) as day
+FROM Days;
+
+/*
+
+Also, you can also use  CONCAT function.
+
+*/
+SELECT concat(datename(weekday,day),', ',datename(month,day) ,' ',datename(day,day),', ',datename(year,day)) as day 
+FROM days

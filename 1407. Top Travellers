@@ -1,0 +1,13 @@
+/* 
+Use coalesce to replace null values with 0.
+Do a LEFT JOIN to get user information even though if he hasn't been part of any rides.
+order by travelled dist desc and then name as specified. 
+*/
+
+
+
+SELECT name, COALESCE(SUM(distance), 0) as travelled_distance
+FROM USERS u LEFT JOIN RIDES r
+ON u.id = r.user_id
+GROUP BY name
+ORDER BY travelled_distance DESC, name;

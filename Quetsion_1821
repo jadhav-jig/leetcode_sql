@@ -1,3 +1,8 @@
+/* 
+Write an SQL query to report the customers with postive revenue in the year 2021.
+*/
+Return the result table in any order.
+
 SELECT customer_id
 FROM Customers
 WHERE year=2021 and revenue >0;

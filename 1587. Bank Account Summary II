@@ -1,0 +1,6 @@
+SELECT TOP 1 u.name as NAME, sum(t.amount) as BALANCE
+FROM users u INNER JOIN transactions t
+ON u.account = t.account
+GROUP BY u.name
+HAVING sum(t.amount) > 10000
+ORDER BY balance DESC;
